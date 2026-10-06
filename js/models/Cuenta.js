@@ -14,9 +14,9 @@ export class Movimiento {
     this.detalle=detalle
   }
 }
-/* =========================================================
-   3. MODELO: CUENTAS
-   ========================================================= */
+/* ========================================================
+  3. MODELO: CUENTAS
+   ======================================================== */
 /** Clase base para los productos bancarios del sistema. */
 export class Cuenta {
   #saldo;

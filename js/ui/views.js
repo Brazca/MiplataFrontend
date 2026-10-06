@@ -53,9 +53,9 @@ function updateHeader() {
 function account() {
   return actual.cuentas.find(c=>c.id===selectedId)||actual.cuentaPrincipal
 }
-/* =========================================================
-   9. DASHBOARD Y OPERACIONES
-   ========================================================= */
+/* ========================================================
+  9. DASHBOARD Y OPERACIONES
+   ======================================================== */
 /** Cambia la sección visible del panel principal. */
 function renderSection(section) {
   if(section==='admin'&&!actual?.esAdmin) {
@@ -111,9 +111,9 @@ function openReceipt(id) {
     if(e.target===modal)close()
   }
   ;
-  /* =========================================================
-   12. EVENTOS GLOBALES
-   ========================================================= */
+  /* ========================================================
+  12. EVENTOS GLOBALES
+   ======================================================== */
 document.addEventListener('keydown',function escReceipt(e) {
     if(e.key==='Escape') {
       close();
@@ -354,7 +354,7 @@ function renderCredit() {
   ));
 }
 /* =========================================================
-   10. ADMINISTRACIÓN
+  10. ADMINISTRACIÓN
    ========================================================= */
 /** Construye el panel administrativo y sus acciones. */
 function renderAdmin() {
@@ -438,7 +438,7 @@ function exportAdminCSV() {
   banco.clientes.forEach(c=>c.cuentas.forEach(ac=>ac.movimientos.forEach(m=>rows.push([c.nombre,c.usuario,c.cedula,c.bloqueado?'Bloqueado':'Activo',ac.tipo,ac.saldo,m.tipo,m.valor,m.fecha]))));
   const csv=rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(',')).join('\n');const blob=new Blob([csv],{type:'text/csv;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='mi-plata-reporte-admin.csv';a.click();URL.revokeObjectURL(url);notify('Reporte administrativo exportado.') }
 /* =========================================================
-   11. PERFIL Y SEGURIDAD
+  11. PERFIL Y SEGURIDAD
    ========================================================= */
 function renderProfile(){appContent.innerHTML=`<div class="section-head" style="margin-top:0"><h2>Mi perfil</h2></div><div class="content-grid"><div class="form-card"><h2>Datos personales</h2><p>Actualiza la información de tu perfil.</p><form id="profile-form"><label class="field"><span>Identificación</span><input name="cedula" value="${esc(actual.cedula)}" required></label><label class="field"><span>Nombre completo</span><input name="nombre" value="${esc(actual.nombre)}" required></label><label class="field"><span>Celular</span><input name="celular" value="${esc(actual.celular)}" required></label><label class="field"><span>Nombre de usuario</span><input name="usuario" value="${esc(actual.usuario)}" required minlength="3"></label><button class="primary-action">Guardar cambios</button></form><div class="section-head"><h2>Seguridad</h2></div><form id="password-form"><label class="field"><span>Usuario</span><input name="usuario" required value="${esc(actual.usuario)}"></label><label class="field"><span>Contraseña actual</span><input name="old" type="password" required></label><label class="field"><span>Nueva contraseña</span><input name="next" type="password" required minlength="4"></label><label class="field"><span>Confirmar nueva contraseña</span><input name="confirm" type="password" required minlength="4"></label><button class="secondary-action">Cambiar contraseña</button></form></div>${actual.esAdmin?`<div class="panel-card"><div class="section-head" style="margin:0 0 8px"><h2>Administración de usuarios</h2><button id="add-user">+ Agregar usuario</button></div><div class="admin-list">${banco.clientes.map(cl=>`<div class="admin-row"><span>${esc(cl.nombre)}<small>@${esc(cl.usuario)} · ${cl.bloqueado?'Bloqueado':'Activo'}</small></span><span><button data-edit-user="${cl.id}">Editar</button><button data-delete-user="${cl.id}">Eliminar</button></span></div>`).join('')}</div></div>`:''}</div>`;
   $('#profile-form').onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.currentTarget));if(banco.clientes.some(c=>c.id!==actual.id&&c.usuario.toLowerCase()===d.usuario.toLowerCase())){notify('Ese usuario ya existe.','error');return}Object.assign(actual,d);banco.guardar();updateHeader();notify('Perfil actualizado correctamente.');renderProfile()};$('#password-form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.currentTarget);if(f.get('usuario')!==actual.usuario||!actual.validarClave(f.get('old'))){notify('Usuario o contraseña actual incorrectos.','error');return}if(f.get('next')!==f.get('confirm')){notify('La confirmación no coincide.','error');return}actual.cambiarClave(f.get('next'));banco.guardar();notify('Contraseña actualizada correctamente.');e.currentTarget.reset()};$('#add-user')?.addEventListener('click',()=>openUserForm());$$('[data-delete-user]').forEach(b=>b.onclick=()=>{if(b.dataset.deleteUser===actual.id){notify('No puedes eliminar el usuario que está conectado.','warn');return}if(confirm('¿Eliminar este usuario y sus productos?')){banco.clientes=banco.clientes.filter(c=>c.id!==b.dataset.deleteUser);banco.guardar();notify('Usuario eliminado.');renderProfile()}});$$('[data-edit-user]').forEach(b=>b.onclick=()=>editUser(b.dataset.editUser))}

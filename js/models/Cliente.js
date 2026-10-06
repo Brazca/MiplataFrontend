@@ -31,3 +31,4 @@ export class Cliente {
       id:this.id,cedula:this.cedula,nombre:this.nombre,celular:this.celular,usuario:this.usuario,password:this.#password,bloqueado:this.bloqueado,intentos:this.intentos,esAdmin:this.esAdmin,cuentas:this.cuentas.map(c=>c.toJSON())
     }
   }
+}

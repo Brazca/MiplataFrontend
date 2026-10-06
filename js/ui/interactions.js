@@ -5,12 +5,12 @@
 import { actual } from '../state.js';
 import { renderSection } from './views.js';
 
-/* =========================================================
-   13. MICROINTERACCIONES Y CENTRO DE ACCIONES
-   ========================================================= */
-/* =========================================================
-   ULTIMATE INTERACTION LAYER — microinteractions + command center
-   ========================================================= */
+/* ========================================================
+  13. MICROINTERACCIONES Y CENTRO DE ACCIONES
+   ======================================================== */
+/* ========================================================
+  ULTIMATE INTERACTION LAYER — microinteractions + command center
+   ======================================================== */
 (function ultimateInteractionLayer(){
   let palette;
   const openPalette=()=>{

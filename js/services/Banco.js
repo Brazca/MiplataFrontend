@@ -5,7 +5,7 @@
 import { STORE_KEY } from '../utils.js';
 import { Cliente } from '../models/Cliente.js';
 
-   ========================================================= */
+  /* ======================================================== */
 /** Gestiona clientes, autenticación y persistencia local de la aplicación. */
 export class Banco {
   constructor() {
