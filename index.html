@@ -1,12 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Mi Plata</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#07110f"><meta name="description" content="Mi Plata — simulador académico de banca digital CESDE"><title>Mi Plata | Banca digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+  <!-- =====================================================
+       NOTIFICACIONES GLOBALES
+       ===================================================== -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <!-- =====================================================
+       PÁGINA DE INICIO
+       ===================================================== -->
+  <section id="landing" class="landing">
+    <nav class="topbar wrap"><a class="brand" href="#"><span class="brand-mark">m</span><span>mi plata<span class="brand-dot">.</span></span></a><div class="nav-actions"><button class="btn btn-quiet" data-view="login">Iniciar sesión</button><button class="btn btn-dark" data-view="register">Abrir mi cuenta <span>↗</span></button></div></nav>
+    <main class="hero wrap"><div class="hero-copy"><div class="eyebrow"><i></i> BANCA DIGITAL, A TU RITMO</div><h1>Tu dinero, en<br><em>movimiento.</em></h1><p class="hero-lead">Una forma más clara y humana de manejar tus finanzas. Ahorra, transfiere y avanza desde un solo lugar.</p><div class="hero-actions"><button class="btn btn-lime btn-large" data-view="register">Empieza ahora <span>↗</span></button><button class="btn btn-link" data-view="login">Ya tengo una cuenta <span>→</span></button></div><div class="hero-proof"><div class="avatar-stack"><b>J</b><b>M</b><b>A</b></div><span>Una banca pensada para ti</span><span class="proof-stars">★★★★★</span></div></div>
+      <div class="hero-visual"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="hero-card gold-card mp-card"><div class="mp-engraving"></div><div class="mp-frame"></div><div class="mp-top"><div class="mp-brand"><span>m</span><div>MI PLATA<small>PRIVATE BANKING</small></div></div><div class="mp-edition">METAL<br><b>EDICIÓN 01</b></div></div><div class="mp-medallion"><svg viewBox="0 0 140 170" role="img" aria-label="Emblema original de sol y cordillera"><defs><linearGradient id="medal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0eee6"/><stop offset=".5" stop-color="#929993"/><stop offset="1" stop-color="#e6e3d9"/></linearGradient></defs><ellipse cx="70" cy="84" rx="52" ry="72" fill="none" stroke="url(#medal)" stroke-width="1.2"/><ellipse cx="70" cy="84" rx="46" ry="66" fill="none" stroke="#d7d4c7" stroke-opacity=".5"/><circle cx="70" cy="64" r="19" fill="none" stroke="url(#medal)" stroke-width="1.2"/><path d="M70 36v-9M70 101v-7M42 64h-8M106 64h-8M50 44l-6-6M96 90l-6-6M90 44l6-6M50 90l-6 6" stroke="url(#medal)" stroke-width="1.2"/><path d="M29 121 54 87l12 14 17-25 28 45M36 130l28-21 13 8 23-17 14 30M27 139h86M39 147h62" fill="none" stroke="url(#medal)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M57 128v-13l13-10 13 10v13M64 128v-13h12v13" fill="none" stroke="#c9c7bd" stroke-width="1"/></svg></div><div class="mp-chip"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mp-contactless">)))</div><div class="mp-number">•••• &nbsp; •••• &nbsp; •••• &nbsp; 4829</div><div class="mp-bottom"><div><small>TITULAR</small><strong>CLIENTE MI PLATA</strong></div><div><small>MIEMBRO DESDE</small><strong>2026</strong></div><div class="mp-mark"><i></i><i></i><span>mastercard</span></div></div><div class="card-shine"></div></div><div class="float-note note-balance"><span class="note-icon">↗</span><div><small>Saldo disponible</small><b>$ 4.850.000</b></div><span class="note-up">+8.4%</span></div><div class="float-note note-transfer"><span class="transfer-icon">↙</span><div><b>Transferencia exitosa</b><small>Hoy · 10:42 a. m.</small></div><strong>−$ 85.000</strong></div><div class="hero-caption">TU BANCO. TUS REGLAS. TU FUTURO.</div></div>
+    </main>
+    <section class="trust-strip"><div class="wrap trust-inner"><span>HECHA PARA LO QUE VIENE</span><b>Más simple</b><i></i><b>Más cerca</b><i></i><b>Más tuya</b><div class="mini-mc"><i></i><i></i><small>pagos que conectan</small></div></div></section>
+    <section class="features wrap"><div><span class="eyebrow">TODO EN UN MISMO LUGAR</span><h2>Una cuenta para<br>cada paso.</h2></div><article><span class="feature-icon">◌</span><h3>Ahorra con intención</h3><p>Haz crecer tu dinero con una cuenta que trabaja a tu favor.</p></article><article><span class="feature-icon icon-orange">↗</span><h3>Mueve tu plata</h3><p>Consigna, retira y transfiere con claridad, en cualquier momento.</p></article><article><span class="feature-icon icon-purple">✳</span><h3>Compra a tu manera</h3><p>Un cupo de crédito con cuotas e intereses siempre visibles.</p></article></section>
+    <footer class="footer"><div class="wrap footer-inner"><a class="brand" href="#"><span class="brand-mark">m</span><span>mi plata<span class="brand-dot">.</span></span></a><span>Una experiencia académica · CESDE · Desarrollo de Software</span><div class="socials"><a href="#">ig</a><a href="#">in</a><a href="#">x</a></div></div></footer>
+  </section>
+  <!-- =====================================================
+       AUTENTICACIÓN: LOGIN Y REGISTRO
+       ===================================================== -->
+  <section id="auth" class="auth-screen hidden"><div class="auth-side"><a class="brand brand-light" href="#" data-home><span class="brand-mark">m</span><span>mi plata<span class="brand-dot">.</span></span></a><div><div class="eyebrow"><i></i> TU BANCO. TUS REGLAS.</div><h2>Bienvenido a<br><em>una nueva forma</em><br>de avanzar.</h2><p>Todo lo que necesitas para cuidar tu dinero, en un solo lugar.</p></div><div class="auth-footer">Simple. Cercano. Hecho para ti. <span>● ● ●</span></div></div><div class="auth-main"><button class="back-home" data-home>← Volver al inicio</button><div id="auth-content"></div></div></section>
+  <!-- =====================================================
+       APLICACIÓN: PANEL DEL USUARIO
+       ===================================================== -->
+  <section id="app" class="app-shell hidden"><aside class="sidebar"><a class="brand" href="#" data-dashboard><span class="brand-mark">m</span><span>mi plata<span class="brand-dot">.</span></span></a><div class="side-label">MENÚ PRINCIPAL</div><nav class="side-nav"><button class="side-link active" data-section="dashboard"><span>⌂</span>Resumen</button><button class="side-link" data-section="movements"><span>⇄</span>Movimientos</button><button class="side-link" data-section="transfer"><span>↗</span>Transferir</button><button class="side-link" data-section="credit"><span>▤</span>Tarjeta de crédito</button><button class="side-link" data-section="profile"><span>◉</span>Mi perfil</button><button class="side-link admin-only" data-section="admin" style="display:none"><span>▣</span>Administrador</button></nav><div class="side-help"><span>✦</span><b>¿Necesitas ayuda?</b><small>Estamos para acompañarte.</small><button id="help-demo">Contactar soporte ↗</button></div><button id="logout" class="logout"><span>↪</span>Cerrar sesión</button></aside>
+    <main class="workspace"><header class="app-header"><div><div class="date-line" id="today"></div><h1 id="greeting">Hola 👋</h1></div><div class="header-user"><button class="bell" aria-label="Notificaciones">♧<i></i></button><div class="user-avatar" id="user-avatar">MP</div><div><b id="header-name">Mi cuenta</b><small>Cuenta personal</small></div><button class="chevron" data-section="profile">⌄</button></div></header><div id="app-content"></div></main></section>
+  <!-- JavaScript modular: el navegador carga el punto de entrada. -->
+  <script type="module" src="js/main.js"></script>
+</body></html>
