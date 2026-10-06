@@ -444,3 +444,13 @@ function renderProfile(){appContent.innerHTML=`<div class="section-head" style="
   $('#profile-form').onsubmit=e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.currentTarget));if(banco.clientes.some(c=>c.id!==actual.id&&c.usuario.toLowerCase()===d.usuario.toLowerCase())){notify('Ese usuario ya existe.','error');return}Object.assign(actual,d);banco.guardar();updateHeader();notify('Perfil actualizado correctamente.');renderProfile()};$('#password-form').onsubmit=e=>{e.preventDefault();const f=new FormData(e.currentTarget);if(f.get('usuario')!==actual.usuario||!actual.validarClave(f.get('old'))){notify('Usuario o contraseña actual incorrectos.','error');return}if(f.get('next')!==f.get('confirm')){notify('La confirmación no coincide.','error');return}actual.cambiarClave(f.get('next'));banco.guardar();notify('Contraseña actualizada correctamente.');e.currentTarget.reset()};$('#add-user')?.addEventListener('click',()=>openUserForm());$$('[data-delete-user]').forEach(b=>b.onclick=()=>{if(b.dataset.deleteUser===actual.id){notify('No puedes eliminar el usuario que está conectado.','warn');return}if(confirm('¿Eliminar este usuario y sus productos?')){banco.clientes=banco.clientes.filter(c=>c.id!==b.dataset.deleteUser);banco.guardar();notify('Usuario eliminado.');renderProfile()}});$$('[data-edit-user]').forEach(b=>b.onclick=()=>editUser(b.dataset.editUser))}
 function openUserForm(){const n=prompt('Nombre completo del nuevo cliente:');if(!n)return;const user=prompt('Nombre de usuario:');if(!user)return;const pass=prompt('Contraseña inicial (mínimo 4 caracteres):');if(!pass)return;try{banco.crear({nombre:n,usuario:user,password:pass,cedula:'',celular:''});notify('Nuevo cliente creado.');renderProfile()}catch(e){notify(e.message,'error')}}
 function editUser(id){const c=banco.clientes.find(x=>x.id===id);if(!c)return;const n=prompt('Editar nombre:',c.nombre);if(n===null)return;const cel=prompt('Editar celular:',c.celular);if(cel===null)return;const ced=prompt('Editar identificación:',c.cedula);if(ced===null)return;c.nombre=n;c.celular=cel;c.cedula=ced;banco.guardar();notify('Datos de usuario actualizados.');renderProfile()}
+
+export {
+    showLanding,
+    showAuth,
+    renderSection,
+    renderDeposit,
+    openReceipt,
+    notify,
+    openApp
+};
