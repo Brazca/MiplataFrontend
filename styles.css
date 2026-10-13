@@ -942,7 +942,35 @@ body{background:radial-gradient(circle at 75% 5%,#eef2e9 0,#f7f8f4 38%,#f4f6f1 1
 /* El resto de tarjetas y paneles internos respetan el mismo lenguaje */
 .app-shell .panel-card,.app-shell .stat-card,.app-shell .form-card,.app-shell .credit-visual,.app-shell .credit-info,.app-shell .premium-panel{color:#eef3ef!important}
 .app-shell .section-head h2{color:#fff!important}.app-shell .section-head p{color:#7f8d86!important}
-.app-shell .movement-table th{color:#77857e!important}.app-shell .movement-table td{color:#d6ded9!important;border-top-color:rgba(255,255,255,.055)!important}
+
+.app-shell .movement-table th {
+    color: #a8b5ad !important;
+}
+
+.app-shell .movement-table td {
+    color: #263b31 !important;
+    border-top-color: #e1e8e2 !important;
+}
+
+.app-shell .movement-table .move-name {
+    color: #172820 !important;
+    font-weight: 700;
+}
+
+.app-shell .movement-table .move-sub,
+.app-shell .movement-table .move-date {
+    color: #586b61 !important;
+    font-size: 10px !important;
+}
+
+.app-shell .movement-table .move-value.positive {
+    color: #16804a !important;
+}
+
+.app-shell .movement-table .move-value.negative {
+    color: #bd493c !important;
+}
+
 .app-shell .form-card{background:linear-gradient(145deg,#0b1512,#08100e)!important;border-color:rgba(255,255,255,.08)!important}.app-shell .form-card h2{color:#fff!important}.app-shell .form-card>p{color:#83918a!important}.app-shell .field span{color:#9eaaa4!important}.app-shell .field input,.app-shell .field select{background:#07100e!important;color:#fff!important;border-color:rgba(255,255,255,.10)!important}.app-shell .secondary-action{background:#101c18!important;color:#dce4df!important;border-color:rgba(255,255,255,.10)!important}
 
 @media(max-width:950px){.credit-showcase{grid-template-columns:1fr!important}.credit-collection{grid-template-columns:1fr 1fr!important}.showcase-card .bank-card{max-width:none}}
