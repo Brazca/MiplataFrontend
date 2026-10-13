@@ -3,6 +3,7 @@
  * Estas clases contienen únicamente datos y reglas de negocio.
  */
 import { uid } from '../utils.js';
+import { money } from '../utils.js';
 
 /** Representa una operación registrada en una cuenta. */
 export class Movimiento {
