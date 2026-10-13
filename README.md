@@ -4,7 +4,6 @@
 classDiagram
     class Banco {
         +clientes
-        +hidratar()
         +guardar()
         +crear(d)
         +autenticar(usuario, clave)
