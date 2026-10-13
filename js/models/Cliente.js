@@ -2,6 +2,7 @@
  * Modelo de cliente.
  */
 import { CuentaFactory } from './factories.js';
+import { uid } from '../utils.js';
 
 /** Representa al usuario bancario y sus productos asociados. */
 export class Cliente {
